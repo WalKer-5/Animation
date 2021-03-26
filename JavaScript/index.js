@@ -1,21 +1,26 @@
 function Stars(){
     let count = 500;
-    let Scene = document.querySelector('.scenes')
-    let p = 0;
-    while(p < count){
+    let scene = document.querySelector('.scene');
+    let h = 0;
+    //ციკლი
+    while ( h < count){
         let Star = document.createElement('i');
-        //Create HTML Element 
-        let X = Math.floor(Math.random()* window.innerHeight)
-        let Y = Math.floor(Math.random()* window.innerHeight)
-        let Duration = Math.floor(Math.random()*10)
-        let Size = Math.random() * 2;
-        Star.style.left = X + 'px';
-        Star.style.top = Y + 'px';
-        Star.style.width = 1 + Size + 'px'
-        Star.style.animationDuration = 5 + Duration +'s'
-        Star.style.animationDelay = Duration +"s"
-        Scene.appendChild(Star);
-        p++;
+        let x = Math.floor(Math.random() * window.innerWidth)
+        let y = Math.floor(Math.random() * window.innerHeight)
+        let Duration = Math.random () * 10;
+        let size = Math.random() * 2;
+        //Element Style
+        Star.style.left = x + 'px'
+        Star.style.top = y + 'px'
+        Star.style.width = 1 + size + 'px'
+        Star.style.height = 1 + size + 'px'
+        //Animation
+        Star.style.animationDuration = 3 + Duration + "s";
+        Star.style.animationDelay = Duration + 's'
+        //Appendchild HTML element 'I'
+        scene.appendChild(Star)
+        h++;
     }
 }
 Stars();
+//function Start

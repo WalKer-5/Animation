@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-.scenes{
+.scene{
     position: relative;
     width: 100%;
     height: 100vh;
@@ -40,22 +40,45 @@
     z-index: 950;
     transform: scale(1.2);
 }
-.scenes i {
+.scene i {
     position: absolute;
-    background-color: rgb(235, 220, 194);
+    background-color: rgb(248, 224, 159);
     border-radius: 50%;
-    animation: anime linear infinite;
+    animation: Animation linear infinite;
 }
-@keyframes anime {
+@keyframes Animation {
     0%{
+        transform: translateY(0px);
         opacity: 0;
-        transform: translateY(0);
     }
-     10% , 90%{
-         opacity: 1;
-     }
-    100%{
-        opacity: 0;
+    10% , 90% {
+        opacity: 1;
+    }
+    100% {
         transform: translateY(-100px);
+        opacity: 0;
     }
+}
+.meteor{
+    position: absolute;
+    left: 0;
+    width: 150px;
+    animation: Meteor 10s infinite;
+}
+@keyframes Meteor {
+    0% {
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(1200px , 600px);
+    }
+}
+@media ( max-width: 500px){
+    .moon {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+    }
+
+    
 }
